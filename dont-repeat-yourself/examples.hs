@@ -4,7 +4,7 @@ demo1 x = (x * x + 3) + 1
 demo2 :: Int -> Int
 demo2 x = (x * x + 3) * 2
 
-demo3:: Int -> Int
+demo3 :: Int -> Int
 demo3 x = if (x * x + 3) < 10
   then 0
   else 1
