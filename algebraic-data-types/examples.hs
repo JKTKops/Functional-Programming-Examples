@@ -1,16 +1,17 @@
-
--- data Bool = True | False
+data Bool = True | False
 
 data TrafficLight = Red | Yellow | Green
 
 
-data ListOfInt = End | Node Int ListOfInt
-exampleList1 :: ListOfInt
-exampleList1 = Node 1 (Node 2 (Node 3 (Node 4 (End))))
+-- bad, repetetive ADTs
+data MaybeInt = JustInt Int | NothingInt
 
-data ListOfBool = End' | Node' Bool ListOfBool
-exampleList2 :: ListOfBool
-exampleList2 = Node' True (Node' True (Node' False (Node' True (End'))))
+data MaybeBool = JustBool Bool | NothingBool
+
+data MaybeList = JustList [] | NothingList
+
+-- Good, general ADT - this one comes packaged with Haskell!
+data Maybe a = Just a | Nothing
 
 data List a = Empty | Cons a (List a)
 exampleList3 :: List Int
