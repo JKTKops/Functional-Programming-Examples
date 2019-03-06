@@ -1,3 +1,4 @@
+{- PARTIAL FUNCTION APPLICATION -}
 {-
 + is an "infix function
 it takes two arguments and goes between them.
@@ -5,17 +6,34 @@ In order to write an infix function in haskell without arguments,
 we need to surround it in parenthesis, like (+).
 -}
 
+-- Remember how square x = x * x was the same as square = \x -> x * x?
+-- Well what about:
+-- add :: Int -> Int -> Int? Again, notice the "->". "Function from Int to (Function from Int to Int)".
+add :: Int -> Int -> Int
+add x y = x + y
+-- We can translate this to:
+-- add = \x -> (\y -> x + y)
+-- Then add x = \y -> x + y
+-- So add 1 evaluates to the function (\y -> 1 + y)!!
+-- We can get this behavior from (+) too, because (+) itself is a function.
+
 addOne :: Int -> Int
 addOne x = x + 1
--- (+1)
+-- addOne = add 1
+-- addOne = (+1)
 
 addTwo :: Int -> Int
 addTwo x = x + 2
--- (+2)
+-- addTwo = add 2
+-- addTwo = (+2)
 
 addThree :: Int -> Int
 addThree x = x + 3
--- (+3)
+-- addThree = add 3
+-- addThree = (+3)
+
+
+{- FUNCTIONS AS PARAMETERS -}
 
 {- PATTERN MATCHING
 remember earlier, we defined
