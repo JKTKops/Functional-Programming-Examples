@@ -21,6 +21,7 @@ letterMap s i
   | i < 9 = m : replicate (i - 5) s
   | i == 9 = [s, l]
     where
+      -- succ :: (Enum a) => a -> a
       m = succ s
       l = succ $ succ s
 
@@ -34,6 +35,7 @@ tens :: Int -> [Letter]
 tens = translate X 2
 
 ones :: Int -> [Letter]
+--ones = translate I 1
 ones = translate I 1
 
 toRoman :: Int -> [Letter]
