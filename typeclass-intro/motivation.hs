@@ -36,7 +36,7 @@ data Color = Red | Green | Blue deriving (Eq)
 -- "Deriving" is only possible for the built-in classes (for now...)
 -- And only for some of them.
 
--- Alternatively we can declare our type and then explicitly make it an "Eq instance"
+-- Alternatively we can declare our type and then explicitly give it an "Eq instance"
 data Suit = Hearts | Clubs | Spades | Diamonds
 instance Eq Suit where
   (==) Hearts Hearts = True
@@ -58,3 +58,5 @@ instance (Eq a) => Eq (Maybe a) where
 -- (print :: (Show a) => a -> String)
 class Show a where
   show :: a -> String
+
+
