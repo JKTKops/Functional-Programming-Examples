@@ -4,4 +4,4 @@ fun factorial(n: Int): Int { // declare name and type
         product = product * i
     }
     return product
-}s
+}

@@ -1,6 +1,29 @@
+-- Remember back when we said functions can only have one argument?
+-- How can we handle having two?
+-- We can take one argument, and evaluate to a function that takes another!
+-- **Functions can return other functions**. They can also take functions as parameters.
+addLambda = \x -> (\y -> x + y)
+-- the arrow is "right-associative"
+-- so this is the same as
+addLambda2 = \x -> \y -> x + y
+-- Haskell lets us write this in a more readable way, just like with named functions:
+addLambda3 = \x y -> x + y
+-- And even simpler:
+addLambda3 x y = x + y
+
+-- Functions of one argument that evaluate to functions of one argument
+-- are called "curried," after Haskell Curry,
+-- who has THREE programming languages named after him. We're using one!
+
+-- Curried functions are great, because you can call a function
+-- without supplying all of the arguments it needs. And then,
+-- you get a function which is just waiting for the remaining arguments,
+-- but remembers the ones it was already given!
+-- We call this "partial function application."
+
 {- PARTIAL FUNCTION APPLICATION -}
 {-
-+ is an "infix function
++ is an "infix" function
 it takes two arguments and goes between them.
 In order to write an infix function in haskell without arguments,
 we need to surround it in parenthesis, like (+).
