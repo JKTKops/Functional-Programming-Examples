@@ -8,7 +8,7 @@ data MaybeInt = JustInt Int | NothingInt
 
 data MaybeBool = JustBool Bool | NothingBool
 
-data MaybeList = JustList [] | NothingList
+data MaybeChar = JustChar Char | NothingChar
 
 -- Good, general ADT - this one comes packaged with Haskell!
 data Maybe a = Just a | Nothing
