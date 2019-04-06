@@ -40,7 +40,8 @@ eventTimeInMinutes (Event t _ _) = timeToMinutes t
 timeToMinutes :: Time -> Int
 timeToMinutes (h, m) = 60 * h + m
 
-main = print . nextEvent (15, 0) $ (addEvent $ newEvent 0 0 "home" "sleep")
+main = print . nextEvent (15, 0) 
+  . (addEvent $ newEvent 0 0 "home" "sleep")
   . (addEvent $ newEvent 15 0 "home" "eat lunch")
   . (addEvent $ newEvent 8 0 "home" "eat breakfast")
   $ emptySchedule

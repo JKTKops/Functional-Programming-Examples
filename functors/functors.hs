@@ -38,7 +38,7 @@ showAll = fmap show
 
 
 -- Don't worry about how this main works, yet!
--- The "do" notation is for a typeclass called "Monad."
+-- The "do" syntax is for a typeclass called "Monad."
 main =  do
   putStrLn "Which case do you want to see?"
   input <- getLine
@@ -51,6 +51,7 @@ main =  do
     otherwise -> (putStrLn "That's not a valid option, try again") >> main
     
 {-
-We expect functors to satisfy a rule:
-fmap id functor = functor
+We expect functors to satisfy two rules:
+fmap id = id
+fmap f . fmap g = fmap (f . g)
 -}

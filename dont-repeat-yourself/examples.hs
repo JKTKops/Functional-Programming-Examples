@@ -18,7 +18,7 @@ better1 :: Int -> Int
 better1 x = 1 + help x
 
 better2 :: Int -> Int
-better2 x = 2 * help x
+better2 x = 2 * (help x)
 
 better3 :: Int -> Int
 better3 x = if (help x) < 10
