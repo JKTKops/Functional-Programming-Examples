@@ -50,4 +50,4 @@ storeAddress = 12
 distanceMiles :: Int -> Int -> Int
 distanceMiles x y = abs (y - x)
 
-main = print $ closeHighSpenders ("my database", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+main = print $ closeHighSpenders ("my database", [0..10])
